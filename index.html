@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fallout 4</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<div class="row" id="header">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1 class="title"> Fallout 4 RPG - Welcome To The Wasteland</h1>	
+			</div>	
+		</div> 
+	</div>
+	<div class="row">
+		<div class="col-md-8" id="main_section">
+			<div class="row">
+				<div class="col-md-12" id="characters">
+					<h2>Choose Your Character</h2>
+					<div id="survivor" class="character_all">
+						<img src="assets/images/survivor.png" class="character center_block">
+						<p class="text-center">Soul Sole Survivor</p>
+						<p class="text-center" id="survivorHP">HP:120</p>
+					</div>
+					<div id="ghoul" class="character_all">
+						<img src="assets/images/ghoul.png" class="character center_block">
+						<p class="text-center">Feral Ghoul</p>
+						<p class="text-center" id="ghoulHP">HP:100</p>
+					</div>
+					<div id="deathclaw" class="character_all">
+						<img src="assets/images/deathclaw.png" class="character center-block">
+						<p class="text-center">Deathclaw</p>
+						<p class="text-center" id="deathclawHP">HP:150</p>
+					</div>
+					<div id="mutant" class="character_all">
+						<img src="assets/images/mutant.png" class="character center-block">
+						<p class="text-center">Super Mutant</p>
+						<p class="text-center" id="mutantHP">HP:180</p>
+					</div>	
+				</div>		
+			</div>
+
+			<div class="row">
+				<div class="col-md-12" id="chosen_character">
+					<h2> Chosen Character</h2>
+				</div>	
+			</div>
+
+			<div class="row">
+				<div class="col-md-12" id="chosen_enemy">
+					<h2>Current Enemy</h2>	
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12" id="enemies">
+					<h2>Other Enemies Available to Attack</h2>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="defeated">
+					<h2>Enemy Defeated</h2>				
+				</div>			
+			</div>
+		</div>
+
+		<div class="col-md-3" id="instruction_section">
+			<h2 class="text-center">Instruction</h2>
+			<h3 id="instruction" class="text-center">Click on the picture to choose your character</h3>
+			<h3 id="feedback"></h3>
+			<button id="attack" class="center-block btn">Attack</button>			
+		</div>	
+	</div>
+</body>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</html>

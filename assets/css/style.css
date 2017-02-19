@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Overseer';
+  src: url('../font/Overseer.otf') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'FSEX300';
+  src: url('../font/FSEX300.ttf') format('truetype');
+}
+
+body {
+	background-size: cover;
+	font-family: 'Overseer';
+}
+
+.page-header {
+	border-bottom: 3px solid #0b89d5;
+	margin-left: 20px;
+}
+
+h2 {
+	font-family: 'Overseer';
+	font-size: 35px;
+	color: #3395d4;
+}
+
+
+p {
+	font-size: 18px;
+	line-height: 15px;
+	margin-top: 8px;
+	color: #0f742c;
+}
+
+.character {
+	height: 180px;
+	width: 180px;
+}
+
+.character_all {
+	font-family: 'FSEX300';
+	display: inline-block;
+	height: 200px
+	width: 200px;
+	border: solid 5px #20f55b;
+	margin: 10px;
+}
+
+#instruction_section {
+	border: 3px solid #0f742c;
+}
+
+#main_section {
+	margin-left: 20px;
+}
+
+#attack {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	/*background-color:#fff;*/
+	width: 100px;
+	height: 50px;
+	/*display: none;*/
+
+}
+
+.enemy_all {
+	font-family: 'FSEX300';
+	display: inline-block;
+	height: 200px
+	width: 200px;
+	border: solid 5px #20f55b;
+	margin: 10px;
+}
+
+#play_again{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+	width: 140px;
+	height: 40px;
+	display: none;
+}
