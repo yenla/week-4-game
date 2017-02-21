@@ -9,24 +9,24 @@
 }
 
 body {
+	background: url(../images/BG06.png) no-repeat center center fixed;
 	background-size: cover;
 	font-family: 'Overseer';
 }
 
-.page-header {
-	border-bottom: 3px solid #0b89d5;
+.header {
 	margin-left: 20px;
 }
 
 h2 {
 	font-family: 'Overseer';
 	font-size: 35px;
-	color: #3395d4;
+	color: #1770bd;
 }
 
 
 p {
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 15px;
 	margin-top: 8px;
 	color: #0f742c;
@@ -42,12 +42,33 @@ p {
 	display: inline-block;
 	height: 200px
 	width: 200px;
-	border: solid 5px #20f55b;
+	/*border: solid 5px #20f55b;*/
 	margin: 10px;
 }
 
+#survivorHP {
+	color: #20f55b;
+}
+
+#ghoulHP {
+	color: #20f55b;
+}
+
+#deathclawHP {
+	color: #20f55b;
+}
+
+#mutantHP {
+	color: #20f55b;
+}
+
 #instruction_section {
-	border: 3px solid #0f742c;
+	border: 5px solid #0f742c;
+	margin-left: 35px;
+}
+
+#instruction {
+	color:#000;
 }
 
 #main_section {
@@ -73,11 +94,11 @@ p {
 	margin: 10px;
 }
 
-#play_again{
+#play-again{
 	margin-top: 20px;
 	margin-bottom: 20px;
-	background-color: white;
+	/*background-color: white;*/
 	width: 140px;
 	height: 40px;
-	display: none;
+	/*display: none;*/
 }
