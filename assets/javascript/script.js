@@ -1,9 +1,9 @@
 var enemySelected;
 var characterSelected;
-var isEnemySelected = false;
-var isCharacterSelected =false;
-var isGameover = false;
-var hasUserLost = false;
+// var isEnemySelected;
+// var isCharacterSelected;
+var isGameover;
+var hasUserLost;
 var surivor = {
 	name: "surivor",
 	healthPoints: 120,
@@ -38,11 +38,37 @@ var mutant = {
 
 var enemies = [ ];
 var defeated = [ ];
-var characers = [surivor, ghoul, deathclaw, mutant];
+var characters = [surivor, ghoul, deathclaw, mutant];
 
-$ (document).ready(function() {
+$(document).ready(function() {
   
+
+  // for (var i = 0; i < characters.lenght; i++ ){
+  // 	var characterSelected = $(".character_all");
+  // 	characterSelected.attr(characters[i]);
+  // 	characterSelected.appendTo("#chosen_character");
+  // }
   // 1a. User will pick a character
+  	$(".character_all").on("click", function() {
+  		$(this).appendTo("#chosen_character");
+
+  		// for (var i = 0; i < characters.length; i++){
+  		// 	if(characters[i] != characterSelected){
+  		// 		enemies.push(characters[i]);
+  		// 		$(characters[i]).appendTo("#enemies");
+  		// 	}
+  		// }
+ 	});
+  		// var characterSelected = $(".character_all");
+  		// var characterSelected = $(".character_all");
+  		// character_all = $(this).attr("characterSelected");
+  		// $("." + character_all).attr("characterSelected");
+  		// $("#" + characterSelected.name).appendTo("#chosen_character");
+  		// characterSelected.appendTo("#chosen_character");
+    	// characterSelected.appendTo("#chosen_character");
+
+});
+
   // 1b. The character will be move to the chosen character section
   // 1c. Other remaining character will be move to the enemy section
   // 2. User will pick an enemy
@@ -51,9 +77,10 @@ $ (document).ready(function() {
   // 5. Check to see if user lost 
   // 6. Check to see if the enemy lost and user defeate all enemies
 
-
-
-
-});
-
+// $(document).ready(function() {
+//  $(".select").on("click", function() {
+//  $(".select").appendTo("#enemy");
+// 	$(this).appendTo("#appendTo");
+//  });
+// });
 
