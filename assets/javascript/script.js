@@ -1,11 +1,11 @@
+
 var enemySelected;
-var characterSelected;
-// var isEnemySelected;
-// var isCharacterSelected;
+// var characterSelected;
 var isGameover;
 var hasUserLost;
-var surivor = {
-	name: "surivor",
+
+var survivor = {
+	name: "survivor",
 	healthPoints: 120,
 	// baseAttackPower: 8,
 	counterAttackPower: 10,
@@ -36,36 +36,23 @@ var mutant = {
 	attackPower: 8
 }; 
 
-var enemies = [ ];
-var defeated = [ ];
-var characters = [surivor, ghoul, deathclaw, mutant];
+var enemies = [];
+var defeated = [];
+var characters = [survivor, ghoul, deathclaw, mutant];
 
 $(document).ready(function() {
-  
-
-  // for (var i = 0; i < characters.lenght; i++ ){
-  // 	var characterSelected = $(".character_all");
-  // 	characterSelected.attr(characters[i]);
-  // 	characterSelected.appendTo("#chosen_character");
-  // }
   // 1a. User will pick a character
-  	$(".character_all").on("click", function() {
-  		$(this).appendTo("#chosen_character");
+  	$(".character_all").on("click", function(characterSelected) {
+  		($(this).appendTo("#chosen_character"));
+  		// $(this).appendTo("#chosen_character");
+  		for (var i = 0; i < characters.length; i++){
+  			if(characters[i] != characterSelected){
+  				enemies.push(characters[i]);
+  				$(characters[i].name).appendTo("#enemies");
 
-  		// for (var i = 0; i < characters.length; i++){
-  		// 	if(characters[i] != characterSelected){
-  		// 		enemies.push(characters[i]);
-  		// 		$(characters[i]).appendTo("#enemies");
-  		// 	}
-  		// }
+  			}
+  		}
  	});
-  		// var characterSelected = $(".character_all");
-  		// var characterSelected = $(".character_all");
-  		// character_all = $(this).attr("characterSelected");
-  		// $("." + character_all).attr("characterSelected");
-  		// $("#" + characterSelected.name).appendTo("#chosen_character");
-  		// characterSelected.appendTo("#chosen_character");
-    	// characterSelected.appendTo("#chosen_character");
 
 });
 
