@@ -68,7 +68,7 @@ p {
 }
 
 #instruction {
-	color:#000;
+	color:#fff;
 }
 
 #main_section {
@@ -78,7 +78,7 @@ p {
 #attack {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	/*background-color:#fff;*/
+	background-color:#fff;
 	width: 100px;
 	height: 50px;
 	/*display: none;*/
@@ -90,14 +90,13 @@ p {
 	display: inline-block;
 	height: 200px
 	width: 200px;
-	border: solid 5px #20f55b;
 	margin: 10px;
 }
 
 #play-again{
 	margin-top: 20px;
 	margin-bottom: 20px;
-	/*background-color: white;*/
+	background-color: white;
 	width: 140px;
 	height: 40px;
 	/*display: none;*/
