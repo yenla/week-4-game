@@ -19,7 +19,7 @@ var survivor = {
 var ghoul = {
 	name: "ghoul",
 	healthPoints: 100,
-	counterAttackPower: 0,
+	counterAttackPower: 10,
 	attackPower: 8
 };
 
@@ -119,10 +119,6 @@ $(document).ready(function() {
 	    	}
 
 	    	// Check to see if all the enemies are defeated //
-
-	    	if(deafeated.length === characters.length - 1) {
-	    		isGameOver = true;
-	    	}
 
     });
 

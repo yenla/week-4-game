@@ -6,7 +6,7 @@ HW - RPG Game
 
 Live Link 
 
-https://yenla.github.io/Hangman-Game/
+https://yenla.github.io/week-4-game/
 
 
 Summary
