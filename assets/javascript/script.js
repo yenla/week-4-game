@@ -1,39 +1,38 @@
 
-var isGameover = false;
+var isGameOver = false;
 var hasUserLost;
 
 var characterSelected;
 var enemySelected;
 
+var enemyObj;
+var protagonistObj;
+
 
 var survivor = {
 	name: "survivor",
 	healthPoints: 120,
-	baseAttackPower: 8,
-	counterAttackPower: 10,
-	attackPower: 8
+	counterAttackPower: 12,
+	attackPower: 9
 };
 
 var ghoul = {
 	name: "ghoul",
 	healthPoints: 100,
-	baseAttackPower: 10,
-	counterAttackPower: 15,
-	attackPower: 10
+	counterAttackPower: 0,
+	attackPower: 8
 };
 
 var deathclaw = {
 	name: "deathclaw",
 	healthPoints: 150,
-	baseAttackPower:  12,
 	counterAttackPower: 16,
-	attackPower: 12
+	attackPower: 10
 };
 
 var mutant = {
 	name: "mutant",
 	healthPoints: 180,
-	baseAttackPower: 8,
 	counterAttackPower: 20,
 	attackPower: 8
 }; 
@@ -42,7 +41,7 @@ var enemies = [];
 var defeated = [];
 var characters = [survivor, ghoul, deathclaw, mutant];
 
-// 1a. User will pick a character
+// User will pick a character
 
 $(document).ready(function() {
   
@@ -69,32 +68,62 @@ $(document).ready(function() {
   		} // closes for loop
 
  	});
+
   	// user will pick an enemy then it will append to the chosen enemy div 
-  	$(document).one('click', '.enemy_all', function(e) {
+  	$(document).on('click', '.enemy_all', function(e) {
        	enemySelected = $(this).attr("id");
-       	
+
        	// console.log(enemySelected);
        	$('#' + enemySelected).appendTo('#chosen_enemy');
-       	$("#instruction").text("Lets Fight! Hit the attack button to attack " + enemySelected.name);
+       	var enemyObj = window[enemySelected];
+       	$("#instruction").text("Lets Fight! Hit the attack button to attack " + enemyObj.name);
     });
 
-    $("#attack").on("click", function() { 
-    	if(isGameover === false) {
-    		enemySelected.healthPoints -= characterSelected.attackPower;
-    		characterSelected.healthPoints -= enemySelected.counterAttackPower;
-    		$('#' + characterSelected.name + "HP").html("HP: " + characterSelected.healthPoints);
-    		$('#' + enemySelected.name + "HP").html("HP: " + enemySelected.healthPoints);
-    	}
+
+    // Setting up the attack button//
+
+        $("#attack").on("click", function() {
+	        if(isGameOver === false) {
+	        var enemyObj = window[enemySelected];
+	        var protagonistObj = window[characterSelected];
+	        enemyObj.healthPoints -= protagonistObj.attackPower;
+	        protagonistObj.healthPoints -= enemyObj.counterAttackPower;
+	        $('#' + characterSelected + "HP").html("HP: " + protagonistObj.healthPoints);
+	        $('#' + enemySelected + "HP").html("HP: " + enemyObj.healthPoints);
+	        $("#instruction").text("You attack " + enemyObj.name + " for " + protagonistObj.attackPower + " damage. " + 
+	        	enemyObj.name + " attack you back for " + enemyObj.counterAttackPower + " damage. ");
+	    	}
+
+	    	// Check for user health point and display winner or loser depend on who win //
+	    	if(protagonistObj.healthPoints <= 0) {
+	    		isGameOver = true;
+	    		hasUserLost = true;
+	    		$("instruction").text("Game Over!");
+	    		$("#play_again").text("Try Again");
+	    		$('#' + characterSelected + "HP"). text("Defeated");
+	    		$('#' + enemySelected + "HP").text("Winner");
+	    		$("#play_again").on("click", function() {
+	    			location.reload();
+	    		});
+	    	}
+
+	    	// Check to see if the user deafeated the enemy // 
+
+	    	if(enemyObj.healthPoints <= 0 && hasUserLost === false) {
+	    		$("#instruction").text("You deated " + enemyObj.name + "Choose a new enemy from the list!");
+	    		$('#' + enemyObj.name).appendTo("#defeated");
+	    		$('#' + enemyObj.name + "HP").text("Defeated");
+	    		$("#attack").css("display", "none");
+	    		defeated.push(enemyObj);
+
+	    	}
+
+	    	// Check to see if all the enemies are defeated //
+
+	    	if(deafeated.length === characters.length - 1) {
+	    		isGameOver = true;
+	    	}
 
     });
 
 }); 
-
-  // 1b. The character will be move to the chosen character section
-  // 1c. Other remaining character will be move to the enemy section
-  // 2. User will pick an enemy
-  // 3. when the character attack the user, their health will decrease and user attack will increase
-  // 4. The attack function will repeat until the enemy is death and then will loop back to choosing a new enemy
-  // 5. Check to see if user lost 
-  // 6. Check to see if the enemy lost and user defeate all enemies
-
