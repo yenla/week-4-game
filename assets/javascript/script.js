@@ -44,7 +44,15 @@ var characters = [survivor, ghoul, deathclaw, mutant];
 // User will pick a character //
 
 $(document).ready(function() {
-  
+
+	console.log('this is the right file');
+
+	$(document).on("click", "#play-again", function() {
+		console.log("reload");
+		location.reload();
+	});
+
+
   	$(document).one("click", '.character_all', function(e) {
 
   		// get the name of the div you clicked on //
@@ -102,9 +110,11 @@ $(document).ready(function() {
 	    		$("#play_again").text("Try Again");
 	    		$('#' + characterSelected + "HP"). text("Defeated");
 	    		$('#' + enemySelected + "HP").text("Winner");
-	    		$("#play_again").on("click", function() {
-	    			location.reload();
-	    		});
+	    		$("#play-again").removeAttr("disabled");
+	    		// $(document).on("click", "#play-again", function() {
+	    		// 	console.log("reload");
+	    		// 	 location.reload();
+	    		// });
 	    	}
 
 	    	// Check to see if the user defeated the enemy // 
@@ -122,9 +132,12 @@ $(document).ready(function() {
 	    		$("#instruction").text("You Win!!! and have defeated all enemy");
 	    		$("#play_again").text("Play Again");
 	    		$("#" + protagonistObj.name + "HP").text("Winner!!!");
-	    		$("#play_again").on("click", function() {
-	    			location.reload();
-	    		});
+	    		$("#play-again").removeAttr("disabled");
+	    		// $(document).on("click", "#play-again", function() {
+	    		// 	location.reload();
+
+	    		// 	console.log("reload");
+	    		// });
     		}
     	});
 
