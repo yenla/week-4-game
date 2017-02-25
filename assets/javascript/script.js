@@ -45,8 +45,6 @@ var characters = [survivor, ghoul, deathclaw, mutant];
 
 $(document).ready(function() {
 
-	console.log('this is the right file');
-
 	$(document).on("click", "#play-again", function() {
 		console.log("reload");
 		location.reload();
